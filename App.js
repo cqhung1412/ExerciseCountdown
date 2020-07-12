@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button: {
-    backgroundColor: '#0ae48b',
+    backgroundColor: '#05DC72',
     borderColor: '#000',
     borderWidth: 1,
     borderRadius: 5,

@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import CountDown from 'react-native-countdown-component'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, Vibration } from 'react-native'
 
 const WorkCountdown = props => (
   <CountDown
     size={70}
     until={props.until}
     onFinish={props.onFinish}
-    digitStyle={{backgroundColor: '#FFF', borderWidth: 2, borderColor: '#1CC625'}}
-    digitTxtStyle={{color: '#1CC625'}}
-    separatorStyle={{color: '#1CC625'}}
+    digitStyle={{backgroundColor: '#FFF', borderWidth: 2, borderColor: '#05AC72'}}
+    digitTxtStyle={{color: '#05AC72'}}
+    separatorStyle={{color: '#05AC72'}}
     timeToShow={['M', 'S']}
     timeLabels={{m: null, s: null}}
     showSeparator
@@ -41,6 +41,7 @@ class Countdown extends Component {
   }
 
   toggleTimerHandler = () => {
+    Vibration.vibrate()
     this.setState({ 
       count: this.state.toggleTimer ? this.state.count : this.state.count + 1,
       toggleTimer: !this.state.toggleTimer 
