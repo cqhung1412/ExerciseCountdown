@@ -30,7 +30,7 @@ export default class App extends Component {
           !isStarted ?
           <MyButton title={'Let us kill these!'} onPress={this.toggleCountdown} /> :
           <Fragment>
-            <Countdown workTime={45} restTime={15} rep={10} />
+            <Countdown workTime={45} restTime={15} rep={10} finished={this.toggleCountdown}/>
             <MyButton title={'Stop plsss'} onPress={this.toggleCountdown} />
           </Fragment>
         }

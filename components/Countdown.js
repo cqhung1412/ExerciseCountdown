@@ -52,9 +52,13 @@ class Countdown extends Component {
     this.setState({ count: this.state.count + 1 })
   }
 
+  finishHandler = () => {
+    alert('Well done!!!')
+    this.props.finished()
+  }
 
   render() {
-    const { workTime, restTime, rep } = this.props
+    const { workTime, restTime, rep, finished } = this.props
     
     let countdownDisplay = null
 
@@ -72,8 +76,14 @@ class Countdown extends Component {
 
     return (
       <>
-        <Text style={styles.text}>{'Rep #' + this.state.count}</Text>
-        {countdownDisplay}
+        {
+          this.state.count < (rep + 1) ?
+          <Fragment>
+            <Text style={styles.text}>{'Rep #' + this.state.count}</Text>
+            {countdownDisplay}
+          </Fragment> :
+          this.finishHandler()
+        }
       </>
     )
   }
