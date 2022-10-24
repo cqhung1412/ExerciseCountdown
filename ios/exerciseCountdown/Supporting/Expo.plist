@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>EXUpdatesSDKVersion</key>
-    <string>38.0.0</string>
+    <string>46.0.0</string>
     <key>EXUpdatesURL</key>
     <string>https://exp.host/@cqhung1412/exerciseCountdown</string>
     <key>EXUpdatesReleaseChannel</key>
