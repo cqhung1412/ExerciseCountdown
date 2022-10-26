@@ -48,7 +48,7 @@ const Auth = () => {
           disabled={!request}
           title={"Login"}
           onPress={() => {
-            promptAsync();
+            promptAsync().catch((error) => console.error(error));
           }}
         />
       )}

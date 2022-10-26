@@ -26,6 +26,9 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
+      - name: 📦 Prebuild
+        run: expo prebuild
+        
       - name: 🚀 Publish app
         run: expo publish --non-interactive
         env:
