@@ -25,7 +25,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>exerciseCountdown</string>
+          <string>exp</string>
           <string>exercisecountdown.expo.googlesignin</string>
         </array>
       </dict>

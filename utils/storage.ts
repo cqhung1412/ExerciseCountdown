@@ -3,9 +3,7 @@ import objectUtil from "./objects";
 
 const storeData = async (key: string, value: any) => {
   try {
-    let setValue = value;
-    if (!objectUtil.isEmpty(value)) setValue = JSON.stringify(value);
-    await AsyncStorage.setItem(`@${key}`, setValue);
+    await AsyncStorage.setItem(`@${key}`, value);
   } catch (error) {
     console.error("storeData():", error);
   }
@@ -17,7 +15,7 @@ const getData = async (key: string) => {
     return value;
   } catch (error) {
     console.error("getData():", error);
-    return null
+    return null;
   }
 };
 
