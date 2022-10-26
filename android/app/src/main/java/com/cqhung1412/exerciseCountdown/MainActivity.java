@@ -1,4 +1,4 @@
-package com.exercisecountdown;
+package com.cqhung1412.exerciseCountdown;
 
 import android.os.Bundle;
 

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Countdown from "./components/Countdown";
 import Auth from "./components/Auth";
 
-const MyButton = (props) => {
+const MyButton = (props: any) => {
   return (
     <TouchableOpacity style={styles.button} onPress={props.onPress}>
       <Text style={styles.text}>{props.title}</Text>

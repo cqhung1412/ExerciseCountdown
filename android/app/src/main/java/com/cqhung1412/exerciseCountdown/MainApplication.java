@@ -1,4 +1,4 @@
-package com.exercisecountdown;
+package com.cqhung1412.exerciseCountdown;
 
 import android.app.Application;
 import android.content.Context;
@@ -11,7 +11,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.exercisecountdown.generated.BasePackageList;
+import com.cqhung1412.exerciseCountdown.generated.BasePackageList;
 
 import org.unimodules.adapters.react.ReactAdapterPackage;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;

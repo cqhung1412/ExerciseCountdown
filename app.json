@@ -4,8 +4,15 @@
   "expo": {
     "name": "exerciseCountdown",
     "slug": "exerciseCountdown",
+    "scheme": "exp",
     "version": "1.0.0",
     "assetBundlePatterns": ["**/*"],
-    "githubUrl": "https://github.com/cqhung1412/ExerciseCountdown"
+    "githubUrl": "https://github.com/cqhung1412/ExerciseCountdown",
+    "android": {
+      "package": "com.cqhung1412.exerciseCountdown"
+    },
+    "ios": {
+      "bundleIdentifier": "exercisecountdown.expo.googlesignin"
+    }
   }
 }
