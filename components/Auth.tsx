@@ -42,7 +42,7 @@ const Auth = () => {
   return (
     <Fragment>
       {user ? (
-        <Text>{`Hello, ${user.displayName}`}</Text>
+        <Text>{`Hi, ${user.displayName}`}</Text>
       ) : (
         <Button
           disabled={!request}

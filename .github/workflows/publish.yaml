@@ -28,3 +28,6 @@ jobs:
 
       - name: 🚀 Publish app
         run: expo publish --non-interactive
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
