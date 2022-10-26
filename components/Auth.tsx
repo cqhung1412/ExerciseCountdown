@@ -10,6 +10,7 @@ import {
   GoogleAuthProvider,
   signInWithCredential,
 } from "firebase/auth";
+import storageUtil from "../utils/storage";
 
 const config = Constants.expoConfig?.extra as {
   googleClientId: string;
@@ -30,14 +31,26 @@ const Auth = () => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    console.log(response, request);
-    if (response?.type === "success") {
-      const { id_token } = response.params;
-      const auth = getAuth();
-      const credential = GoogleAuthProvider.credential(id_token);
-      signInWithCredential(auth, credential).then((res) => setUser(res.user));
-    }
+    storageUtil.getData("id_token").then((token) => {
+      console.log("token:", token);
+      if (token) return signInUser(token);
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log("response:", response);
+    if (response?.type === "success") signInUser(response.params.id_token);
   }, [response]);
+
+  const signInUser = (id_token: string) => {
+    const auth = getAuth();
+    const credential = GoogleAuthProvider.credential(id_token);
+    console.log("auth, cred:", auth, credential);
+    signInWithCredential(auth, credential).then((res) => {
+      setUser(res.user);
+      storageUtil.storeData("id_token", id_token);
+    });
+  };
 
   return (
     <Fragment>
