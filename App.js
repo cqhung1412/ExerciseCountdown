@@ -1,54 +1,64 @@
-import React, { Component, Fragment } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import Countdown from './components/Countdown';
+import React, { Component, Fragment } from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Constants from "expo-constants";
 
-const MyButton = props => {
+import Countdown from "./components/Countdown";
+
+const testVar = Constants.expoConfig.extra.testVar
+
+const MyButton = (props) => {
   return (
-    <TouchableOpacity 
-      style={styles.button}
-      onPress={props.onPress}
-    >
+    <TouchableOpacity style={styles.button} onPress={props.onPress}>
       <Text style={styles.text}>{props.title}</Text>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 export default class App extends Component {
   state = {
-    isStarted: false
-  }
+    isStarted: false,
+  };
 
   toggleCountdown = () => {
-    this.setState({ isStarted: !this.state.isStarted })
-  }
+    this.setState({ isStarted: !this.state.isStarted });
+  };
 
   render() {
-    const { isStarted } = this.state
+    const { isStarted } = this.state;
     return (
       <View style={styles.container}>
-        {
-          !isStarted ?
-          <MyButton title={'Let us kill these!'} onPress={this.toggleCountdown} /> :
+        {testVar || "No env detected"}
+        {!isStarted ? (
+          <MyButton
+            title={"Let us kill these!"}
+            onPress={this.toggleCountdown}
+          />
+        ) : (
           <Fragment>
-            <Countdown workTime={45} restTime={15} rep={10} finished={this.toggleCountdown}/>
-            <MyButton title={'Stop plsss'} onPress={this.toggleCountdown} />
+            <Countdown
+              workTime={45}
+              restTime={15}
+              rep={10}
+              finished={this.toggleCountdown}
+            />
+            <MyButton title={"Stop plsss"} onPress={this.toggleCountdown} />
           </Fragment>
-        }
+        )}
       </View>
-    )
+    );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#DDD',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#DDD",
+    alignItems: "center",
+    justifyContent: "center",
   },
   button: {
-    backgroundColor: '#05DC72',
-    borderColor: '#000',
+    backgroundColor: "#05DC72",
+    borderColor: "#000",
     borderWidth: 1,
     borderRadius: 5,
     margin: 20,
@@ -57,5 +67,5 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-  }
+  },
 });
