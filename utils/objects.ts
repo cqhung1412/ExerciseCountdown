@@ -1,4 +1,4 @@
-const isEmpty = (object) => {
+const isEmpty = (object: any) => {
   for (const _property in object) return false;
   return true;
 };

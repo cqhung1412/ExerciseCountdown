@@ -7,7 +7,9 @@ module.exports = ({ config }) => {
     ...config,
     extra: {
       googleClientId: process.env.GOOGLE_CLIENT_ID,
-      firebaseApiKey: process.env.FIREBASE_API_KEY
+      googleIosClientId: process.env.GOOGLE_IOS_CLIENT_ID,
+      firebaseApiKey: process.env.FIREBASE_API_KEY,
+      firebaseIosApiKey: process.env.FIREBASE_IOS_API_KEY
     }
   };
 };
