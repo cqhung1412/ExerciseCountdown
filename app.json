@@ -1,14 +1,11 @@
 {
   "name": "exerciseCountdown",
-  "displayName": "exerciseCountdown",
+  "displayName": "Exercise Countdown",
   "expo": {
     "name": "exerciseCountdown",
     "slug": "exerciseCountdown",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "description": "React Native App for Personal Use\n\n",
-    "githubUrl": "https://github.com/Nati-onBear/ExerciseCountdown"
+    "assetBundlePatterns": ["**/*"],
+    "githubUrl": "https://github.com/cqhung1412/ExerciseCountdown"
   }
 }
