@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Button, Text } from "react-native";
+import { Text } from "react-native";
 import Constants from "expo-constants";
 import * as WebBrowser from "expo-web-browser";
 import * as Google from "expo-auth-session/providers/google";
@@ -13,6 +13,7 @@ import {
 } from "firebase/auth";
 
 import storageUtil from "../utils/storage";
+import Button from "./Button";
 
 const config = Constants.expoConfig?.extra as {
   googleClientId: string;
@@ -28,7 +29,7 @@ initializeApp({
 WebBrowser.maybeCompleteAuthSession();
 
 const Auth = () => {
-  const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
+  const [_request, response, promptAsync] = Google.useIdTokenAuthRequest({
     clientId: googleClientId,
     iosClientId: googleIosClientId,
   });
@@ -73,7 +74,6 @@ const Auth = () => {
         </>
       ) : (
         <Button
-          disabled={!request}
           title={"Login"}
           onPress={() => {
             promptAsync().catch((error) => console.error(error));
